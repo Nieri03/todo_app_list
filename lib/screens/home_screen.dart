@@ -52,6 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
       appBar: AppBar(
@@ -70,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: widget.isDarkMode
+            colors: isDarkMode
                 ? [Colors.grey.shade900, Colors.black]
                 : [Colors.blue.shade50, Colors.blue.shade100],
             begin: Alignment.topCenter,
